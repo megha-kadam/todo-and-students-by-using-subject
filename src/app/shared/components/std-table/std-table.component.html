@@ -1,0 +1,48 @@
+<div class="table-responsive">
+    <table class="table table-bordered" *ngIf="stdsArr.length > 0; else noStdData">
+        <thead>
+            <tr>
+                <th>Sr No</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Contact</th>
+                <th>Edit</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let std of stdsArr; let i = index">
+                <td>
+                    {{i + 1}}
+                </td>
+                <td>
+                    {{std.fName}}
+                </td>
+                <td>
+                    {{std.lName}}
+                </td>
+                <td>
+                    {{std.email}}
+                </td>
+                <td>
+                    {{std.contact}}
+                </td>
+                <td>
+                    <button class="btn btn-sm btn-outline-info"
+                    (click)="onEdit(std)">Edit</button>
+                </td>
+                <td>
+                    <button class="btn btn-sm btn-outline-danger"
+                    (click)="onRemoveStd(std)">Remove</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<ng-template #noStdData>
+    <p class="alert alert-info">
+        No Student added yet.
+    </p>
+</ng-template>

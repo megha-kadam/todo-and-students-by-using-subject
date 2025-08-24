@@ -1,0 +1,8 @@
+<p>
+    {{msg || 'Are you sure, you want to remove'}}
+</p>
+
+<div>
+    <button class="btn btn-sm btn-outline-info mr-3" (click)="onClose(true)">Yes</button>
+    <button class="btn btn-sm btn-outline-danger" (click)="onClose(false)">No</button>
+</div>

@@ -1,0 +1,22 @@
+
+        <ul class="list-group" *ngIf="todosArr.length > 0; else noTodoData">
+            <li class="list-group-item d-flex justify-content-between" *ngFor="let todo of todosArr">
+                <strong>
+                    {{todo.todoItem}}
+                </strong>
+
+                <div>
+                    <button
+                    (click)="onEditTodo(todo)"
+                     class="btn btn-sm btn-outline-info mr-3">Edit</button>
+                    <button class="btn btn-sm btn-outline-danger"
+                    (click)="onRemoveTodo(todo)">Remove</button>
+                </div>
+            </li>
+        </ul>
+   
+        <ng-template #noTodoData>
+            <p class="alert alert-info">
+                No todos added yet.
+            </p>
+        </ng-template>
